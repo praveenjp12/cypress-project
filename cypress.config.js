@@ -8,7 +8,8 @@ module.exports = defineConfig({
             return config
     },
     env: {
-      allureReuseAfterSpec: true
+      allureReuseAfterSpec: true,
+      allure: true
     }
   },
 });
