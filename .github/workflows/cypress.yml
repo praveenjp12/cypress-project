@@ -7,16 +7,14 @@ jobs:
     strategy:
             fail-fast: false
             matrix:
-             containers: [ 0, 1, 2, 3, 4 ]
+             containers: [ 0, 1]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install Packages
         run:  npm install  
-      - name: install playwright
-        run: npx playwright install-deps webkit
       - name: Run Tests
-        run:  npx cypress run --browser chrome 
+        run:  npx cypress run --spec $(node cypress-parallel.js ${{ matrix.containers }} 2) --browser chrome
       
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
