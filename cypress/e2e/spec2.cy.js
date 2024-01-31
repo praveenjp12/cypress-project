@@ -1,5 +1,6 @@
 describe('template spec', () => {
-  it('passes', () => {
-    expect(2).to.equal(1)
+  it('passesss', () => {
+    cy.visit('google.com')
+    cy.get('.csssss').should('be.visible')
   })
 })
