@@ -11,9 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-            repository: praveenjp12/cypress-project
-            ref: 'main'
       - name: Retrieve node modules
         uses: actions/cache/restore@v3
         with:
