@@ -26,7 +26,7 @@ jobs:
         with:
           # Don't run tests; we're only using the install and build steps here
           runTests: false
-          build: yarn build
+      - run: npx cypress install
       - name: Run Tests
         run:  npx cypress run --spec $(node cypress-parallel.js ${{ matrix.containers }} 2) --browser chrome
       
