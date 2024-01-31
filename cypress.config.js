@@ -23,6 +23,5 @@ module.exports = defineConfig({
     },
   },
   experimentalWebKitSupport: true,
-  video:false,
   projectId: "eaw8oh"
 });
