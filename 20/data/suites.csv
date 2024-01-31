@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Jan 31 10:19:23 GMT 2024","Wed Jan 31 10:19:24 GMT 2024","292","","template spec","","","","passessdfdsf",""
+"passed","Wed Jan 31 10:19:10 GMT 2024","Wed Jan 31 10:19:11 GMT 2024","267","","template spec","","","","spec5",""
+"passed","Wed Jan 31 10:19:06 GMT 2024","Wed Jan 31 10:19:07 GMT 2024","1388","","template spec","","","","passesss",""
+"passed","Wed Jan 31 10:19:18 GMT 2024","Wed Jan 31 10:19:18 GMT 2024","313","","template spec","","","","passes",""
+"passed","Wed Jan 31 10:19:21 GMT 2024","Wed Jan 31 10:19:21 GMT 2024","255","","template spec","","","","spec4",""
