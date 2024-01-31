@@ -19,6 +19,7 @@ jobs:
         with:
             path: '/node-modules'
             key: ${{github.sha}} 
+      - run: chown -R 1001:1001 /github/home/.cache && echo "pwn dat cache"
       - name: Install Packages
         run:  npm install --non-interactive --ignore-optional --no-progress
       - name: Run Tests
