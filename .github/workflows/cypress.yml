@@ -19,9 +19,14 @@ jobs:
         with:
             path: '/node-modules'
             key: ${{github.sha}} 
-      - run: chown -R 1001:1001 /github/home/.cache && echo "pwn dat cache"
       - name: Install Packages
         run:  npm install --non-interactive --ignore-optional --no-progress
+      - name: Install and cache Cypress and npm dependencies, and build frontend server
+        uses: cypress-io/github-action@v2
+        with:
+          # Don't run tests; we're only using the install and build steps here
+          runTests: false
+          build: yarn build
       - name: Run Tests
         run:  npx cypress run --spec $(node cypress-parallel.js ${{ matrix.containers }} 2) --browser chrome
       
