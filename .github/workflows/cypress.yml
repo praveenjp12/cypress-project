@@ -14,17 +14,13 @@ jobs:
         with:
             repository: praveenjp12/cypress-project
             ref: 'main'
-      - name: Set user
-        run:  |
-            echo 'npm config set user 0'
-            echo 'npm config set unsafe-perm true'
       - name: Retrieve node modules
         uses: actions/cache/restore@v3
         with:
             path: '/node-modules'
             key: ${{github.sha}} 
       - name: Install Packages
-        run:  npm install 
+        run:  npm install --non-interactive --ignore-optional --no-progress
       - name: Run Tests
         run:  npx cypress run --spec $(node cypress-parallel.js ${{ matrix.containers }} 2) --browser chrome
       
