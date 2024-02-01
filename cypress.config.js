@@ -22,8 +22,5 @@ module.exports = defineConfig({
     },
   },
   experimentalWebKitSupport: true,
-  projectId: "eaw8oh",
-  env:{
-    allureAddAnalyticLabels: true
-  }
+  projectId: "eaw8oh"
 });

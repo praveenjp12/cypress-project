@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "@mmisty/cypress-allure-adapter": "^0.16.2",
     "@shelex/cypress-allure-plugin": "^2.40.1",
     "cypress": "12.5.0"
   }
