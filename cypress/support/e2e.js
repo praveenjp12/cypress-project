@@ -16,17 +16,6 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 require('@shelex/cypress-allure-plugin');
-
-cy.allure.writeEnvironmentInfo().parameter(
-    'Browser', Cypress.browser.name
-)
-
-cy.allure.writeEnvironmentInfo().parameter(
-    'Test-Tags', Cypress.env('TEST_TAGS')
-)
-
-cy.allure.writeEnvironmentInfo().parameter(
-    'Environment', Cypress.env('TEST_STAGE')
-)
+import '@mmisty/cypress-allure-adapter/support';
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
