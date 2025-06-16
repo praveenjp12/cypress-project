@@ -53,8 +53,7 @@ jobs:
             path: gh-pages
          
       - name: Allure Report action from marketplace
-        uses: simple-elf/allure-report-action@master
-        if: always()
+        uses: praveenjp12/cypress-project@allure-report-deploy
         with:
           allure_results: allure-results
           allure_history: allure-history
@@ -62,7 +61,7 @@ jobs:
   
       - name: Deploy report to Github Pages
         if: always()
-        uses: peaceiris/actions-gh-pages@v2
+        uses: praveenjp12/cypress-project@allure-report-release
         env:
           PERSONAL_TOKEN: ${{ secrets.MY_TOKEN }}
           PUBLISH_BRANCH: gh-pages
