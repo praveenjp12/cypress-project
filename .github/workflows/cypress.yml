@@ -53,7 +53,7 @@ jobs:
             path: gh-pages
          
       - name: Allure Report action from marketplace
-        uses: ./.github/actions/allure-report-deploy
+        uses: ./actions/allure-report-deploy
         with:
           allure_results: allure-results
           allure_history: allure-history
@@ -61,7 +61,7 @@ jobs:
   
       - name: Deploy report to Github Pages
         if: always()
-        uses: ./.github/actions/allure-report-release
+        uses: ./actions/allure-report-release
         env:
           PERSONAL_TOKEN: ${{ secrets.MY_TOKEN }}
           PUBLISH_BRANCH: gh-pages
