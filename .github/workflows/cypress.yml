@@ -7,7 +7,7 @@ jobs:
     strategy:
             fail-fast: false
             matrix:
-             containers: [ 0, 1, 2]
+             containers: [ 0]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
