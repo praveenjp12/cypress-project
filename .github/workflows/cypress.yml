@@ -1,4 +1,4 @@
-name: Cypress Automation Tests
+name: Cypress Automation Test
 on: [push]
 jobs:
   job1:
