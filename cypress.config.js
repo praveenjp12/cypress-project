@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 const allureWriter = require("@shelex/cypress-allure-plugin/writer");
 module.exports = defineConfig({
+  projectId: "fvxo5k",
   screenshotsFolder: 'cypress/screenshots',
   allureResultsPath: 'allure-results',
   screenshotOnRunFailure: true,
