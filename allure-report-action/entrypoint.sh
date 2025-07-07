@@ -66,6 +66,7 @@ print_info "Deploying to ${REPOSITORY_NAME}"
 if [ -n "${PERSONAL_TOKEN}" ]; then
   print_info "Using PERSONAL_TOKEN"
   remote_repo="https://x-access-token:${PERSONAL_TOKEN}@github.com/${REPOSITORY_NAME}.git"
+fi
 
 if [ -z "${PUBLISH_BRANCH}" ]; then
   print_error "Missing PUBLISH_BRANCH"
