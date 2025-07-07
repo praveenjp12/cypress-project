@@ -52,17 +52,25 @@ jobs:
             ref: gh-pages
             path: gh-pages
          
-      - name: Allure Report action from marketplace
-        uses: praveenjp12/cypress-project/allure-report-deploy@main
-        with:
-          allure_results: allure-results
-          allure_history: allure-history
-          keep_reports: 2
-  
-      - name: Deploy report to Github Pages
-        if: always()
-        uses: praveenjp12/cypress-project/allure-report-release@main
+      - name: Publish Allure and Deploy
+        run: bash ./scripts/publish-allure-and-deploy.sh
         env:
-          PERSONAL_TOKEN: ${{ secrets.MY_TOKEN }}
+          INPUT_ALLURE_RESULTS: allure-results
+          INPUT_ALLURE_REPORT: allure-report
+          INPUT_ALLURE_HISTORY: allure-history
+          INPUT_GH_PAGES: gh-pages
+          INPUT_GITHUB_REPO_OWNER: ${{ github.repository_owner }}
+          INPUT_GITHUB_TESTS_REPO: ${{ github.repository }}
+          INPUT_GITHUB_RUN_ID: ${{ github.run_id }}
+          INPUT_GITHUB_RUN_NUM: ${{ github.run_number }}
+          INPUT_GITHUB_SERVER_URL: ${{ github.server_url }}
+          INPUT_KEEP_REPORTS: 5
+          INPUT_REPORT_NAME: "Allure Test Report"
+          INPUT_SUBFOLDER: ""
+          INPUT_REPORT_URL: ""
+      
+          # Deployment
+          PUBLISH_DIR: gh-pages
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history
+          PERSONAL_TOKEN: ${{ secrets.MY_TOKEN }}
+
