@@ -53,8 +53,8 @@ jobs:
             path: gh-pages
          
       - name: Publish Allure and Deploy
-        run: bash ./publish-allure-and-deploy.sh
-        env:
+        uses: praveenjp12/cypress-project/allure-report-action@main
+        with:
           INPUT_ALLURE_RESULTS: allure-results
           INPUT_ALLURE_REPORT: allure-report
           INPUT_ALLURE_HISTORY: allure-history
