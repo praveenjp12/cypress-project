@@ -60,7 +60,7 @@ inputs:
   forceOrphan:
     description: 'Keep only the latest commit on a GitHub Pages branch'
     required: false
-    default: 'false'e
+    default: 'false'
 runs:
   using: 'docker'
   image: 'Dockerfile'
