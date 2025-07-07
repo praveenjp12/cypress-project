@@ -54,7 +54,7 @@ jobs:
          
       - name: Publish Allure and Deploy
         uses: praveenjp12/cypress-project/allure-report-action@main
-        with:
+        env:
           INPUT_ALLURE_RESULTS: allure-results
           INPUT_ALLURE_REPORT: allure-report
           INPUT_ALLURE_HISTORY: allure-history
@@ -65,11 +65,6 @@ jobs:
           INPUT_GITHUB_RUN_NUM: ${{ github.run_number }}
           INPUT_GITHUB_SERVER_URL: ${{ github.server_url }}
           INPUT_KEEP_REPORTS: 5
-          INPUT_REPORT_NAME: "Allure Test Report"
-          INPUT_SUBFOLDER: ""
-          INPUT_REPORT_URL: ""
-      
-          # Deployment
           PUBLISH_DIR: gh-pages
           PUBLISH_BRANCH: gh-pages
           PERSONAL_TOKEN: ${{ secrets.MY_TOKEN }}
