@@ -53,7 +53,7 @@ jobs:
             path: gh-pages
          
       - name: Publish Allure and Deploy
-        run: bash ./scripts/publish-allure-and-deploy.sh
+        run: bash ./publish-allure-and-deploy.sh
         env:
           INPUT_ALLURE_RESULTS: allure-results
           INPUT_ALLURE_REPORT: allure-report
