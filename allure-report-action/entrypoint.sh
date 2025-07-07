@@ -104,7 +104,7 @@ git add --all
 
 COMMIT_MSG="Automated deployment: $(date -u)"
 
-git tag ${TAG_OPTS} -a "${COMMIT_MSG}" -m "${COMMIT_MSG}"
-git push ${TAG_OPTS} origin "${COMMIT_MSG}"
+git commit -m "${COMMIT_MSG}" || print_info "Nothing to commit"
+git push origin "${remote_branch}"
 
 print_info "✅ ${GITHUB_SHA} was successfully deployed to ${remote_repo}@${remote_branch}"
