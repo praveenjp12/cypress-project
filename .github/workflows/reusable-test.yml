@@ -4,16 +4,17 @@ name: Main Workflow
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # 11:53 AM UTC = 5:30 PM IST
+    - cron: '10 12 * * *'  # 11:53 AM UTC = 5:30 PM IST
 
 jobs:
   first-job:
-    uses: praveenjp12/cypress-project/reusable-workflow@main  # Local reusable workflow
+    uses: praveenjp12/cypress-project/.github/workflows/reusable-workflow.yml@main
     with:
-      name: "Report1"  # Passing input
+      name: "Report1"
       runcommand: "npx cypress run --browser chrome"
+
   second-job:
-    uses: praveenjp12/cypress-project/reusable-workflow@main  # Local reusable workflow
+    uses: praveenjp12/cypress-project/.github/workflows/reusable-workflow.yml@main
     with:
-      name: "Report2"  # Passing input
+      name: "Report2"
       runcommand: "npx cypress run"
