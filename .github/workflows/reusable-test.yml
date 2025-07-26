@@ -12,7 +12,7 @@ jobs:
     uses: praveenjp12/cypress-project/.github/workflows/reusable-workflow.yml@main
     with:
       name: "Report1"
-      runcommand: "npx cypress run --browser chrome"
+      runcommand: "npx cypress run --env allure=true --browser chrome"
 
   second-job:
     needs: first-job              # Wait for first-job
@@ -20,4 +20,4 @@ jobs:
     uses: praveenjp12/cypress-project/.github/workflows/reusable-workflow.yml@main
     with:
       name: "Report2"
-      runcommand: "npx cypress run"
+      runcommand: "npx cypress run --env allure=true"
