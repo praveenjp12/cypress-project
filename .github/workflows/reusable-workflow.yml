@@ -1,0 +1,40 @@
+name: Cypress Automation Test
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+      runcommand:
+        required: true
+        type: string
+jobs:
+  job1:
+    name: cypress-run
+    runs-on: ubuntu-latest
+    timeout-minutes: 15  # ⏰ This sets the timeout to 15 minutes
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Retrieve node modules
+        uses: actions/cache/restore@v3
+        with:
+            path: '/node-modules'
+            key: ${{github.sha}} 
+      - name: Install Packages
+        run:  npm install --non-interactive --ignore-optional --no-progress
+      - name: Install and cache Cypress and npm dependencies, and build frontend server
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+      - run: npx cypress install
+      - name: Run Tests
+        run:  ${{ inputs.runcommand }}
+      
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ inputs.name }}
+          path: allure-results
+ 
