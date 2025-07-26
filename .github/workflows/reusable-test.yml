@@ -4,7 +4,7 @@ name: Main Workflow
 
 on:
   schedule:
-    - cron: '15 12 * * *'  # 11:53 AM UTC = 5:30 PM IST
+     - cron: '0 13 * * *'
   workflow_dispatch:
 
 jobs:
