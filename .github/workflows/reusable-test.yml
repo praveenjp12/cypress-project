@@ -8,13 +8,12 @@ on:
 
 jobs:
   first-job:
-    uses: ./.github/actions/reusable-job.yaml  # Local reusable workflow
+    uses: ./allure-report-action/reusable-job.yaml  # Local reusable workflow
     with:
       name: "Report1"  # Passing input
       runcommand: "npx cypress run --browser chrome"
-
-   second-job:
-    uses: ./.github/actions/reusable-job.yaml  # Local reusable workflow
+  second-job:
+    uses: ./allure-report-action/reusable-job.yaml  # Local reusable workflow
     with:
       name: "Report2"  # Passing input
       runcommand: "npx cypress run"
