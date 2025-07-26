@@ -14,6 +14,8 @@ jobs:
       runcommand: "npx cypress run --browser chrome"
 
   second-job:
+    needs: first-job              # Wait for first-job
+    if: always()        
     uses: praveenjp12/cypress-project/.github/workflows/reusable-workflow.yml@main
     with:
       name: "Report2"
