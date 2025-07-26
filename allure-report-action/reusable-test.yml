@@ -1,0 +1,20 @@
+# File: .github/workflows/main.yml
+
+name: Main Workflow
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # 11:53 AM UTC = 5:30 PM IST
+
+jobs:
+  first-job:
+    uses: ./.github/actions/reusable-job.yaml  # Local reusable workflow
+    with:
+      name: "Report1"  # Passing input
+      runcommand: "npx cypress run --browser chrome"
+
+   second-job:
+    uses: ./.github/actions/reusable-job.yaml  # Local reusable workflow
+    with:
+      name: "Report2"  # Passing input
+      runcommand: "npx cypress run"
