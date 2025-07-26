@@ -4,7 +4,7 @@ name: Main Workflow
 
 on:
   schedule:
-    - cron: '10 12 * * *'  # 11:53 AM UTC = 5:30 PM IST
+    - cron: '15 12 * * *'  # 11:53 AM UTC = 5:30 PM IST
 
 jobs:
   first-job:
